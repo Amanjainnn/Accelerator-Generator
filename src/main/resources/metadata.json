@@ -1,0 +1,18 @@
+{
+  "type": ["ANDROID","WEB","IOS"],
+  "frameworks": [
+    {
+      "backend": "spring boot",
+      "frontend": ["react", "angular"],
+      "form": {
+        "groupId": "String",
+        "artifactId": "String"
+      }
+    },
+    {
+      "backend": "flask",
+      "frontend": ["React", "Angular"]
+    }
+  ],
+  "backends": ["spring boot", "flask"]
+}

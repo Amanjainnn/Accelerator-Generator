@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: generator
+  profiles:
+    active: dev
+
+server:
+  port: 8080

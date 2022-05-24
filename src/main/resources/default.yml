@@ -1,0 +1,29 @@
+swagger: "2.0"
+info:
+  description: "This is a default server"
+  version: "1.0.0"
+  title: "Hello World"
+host: "localhost:8080"
+basePath: "/v1"
+tags:
+  - name: "hello-world"
+    description: "Basic hello world api"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /hello:
+    get:
+      tags:
+        - "hello-world"
+      summary: "Returns a string"
+      description: ""
+      operationId: "helloWorld"
+      consumes:
+        - "application/json"
+      responses:
+        200:
+          description: Returns the greeting.
+          schema:
+            type: string
+            default: Hello World
