@@ -11,8 +11,16 @@
     },
     {
       "backend": "flask",
-      "frontend": ["React", "Angular"]
+      "frontend": ["react", "angular"],
+      "form": {
+      }
+    },
+    {
+      "backend": "node",
+      "frontend": ["react", "angular"],
+      "form": {
+      }
     }
   ],
-  "backends": ["spring boot", "flask"]
+  "backends": ["spring boot", "flask", "node"]
 }

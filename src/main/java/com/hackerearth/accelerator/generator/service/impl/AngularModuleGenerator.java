@@ -10,7 +10,6 @@ public class AngularModuleGenerator implements ModuleGenerator {
 
 	@Override
 	public void generate(Path path, TechStackRequest request) throws BadRequestException {
-		throw new UnsupportedOperationException();
 	}
 
 }
