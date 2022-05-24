@@ -21,6 +21,9 @@ public class ModuleGeneratorFactory {
 		case "angular":
 			new AngularModuleGenerator().generate(path, request);
 			break;
+		case "node":
+			new NodeModuleGenerator().generate(path, request);
+			break;
 		default:
 			throw new BadRequestException("Invalid Module type");
 
