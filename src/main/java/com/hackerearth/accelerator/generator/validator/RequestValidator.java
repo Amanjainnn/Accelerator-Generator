@@ -20,7 +20,7 @@ public class RequestValidator {
 		if (!techStackByBackend.getFrontend().contains(request.getFrontend()))
 			throw new BadRequestException("Invalid frontend");
 
-		if (!techStackByBackend.getForm().keySet().equals(request.getForm().keySet()))
+		if (!techStackByBackend.getForm().equals(request.getForm().keySet()))
 			throw new BadRequestException("Invalid frontend");
 	}
 

@@ -4,22 +4,20 @@
     {
       "backend": "spring boot",
       "frontend": ["react", "angular"],
-      "form": {
-        "groupId": "String",
-        "artifactId": "String"
-      }
+      "form": [
+        "groupId",
+        "artifactId"
+      ]
     },
     {
       "backend": "flask",
       "frontend": ["react", "angular"],
-      "form": {
-      }
+      "form": []
     },
     {
       "backend": "node",
       "frontend": ["react", "angular"],
-      "form": {
-      }
+      "form": []
     }
   ],
   "backends": ["spring boot", "flask", "node"]

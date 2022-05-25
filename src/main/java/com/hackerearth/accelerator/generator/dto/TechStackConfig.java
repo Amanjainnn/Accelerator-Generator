@@ -8,7 +8,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -27,6 +27,6 @@ public class TechStackConfig {
 
 	@Valid
 	@NotNull
-	Map<String, String> form;
+	Set<String> form;
 
 }
