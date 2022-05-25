@@ -5,6 +5,7 @@ import com.hackerearth.accelerator.generator.exception.BadRequestException;
 import com.hackerearth.accelerator.generator.service.ModuleGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +13,7 @@ import java.io.InputStreamReader;
 import java.nio.file.Path;
 
 @Slf4j
+@Service
 public class NodeModuleGenerator implements ModuleGenerator {
 
 	@Override
