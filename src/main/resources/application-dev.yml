@@ -2,4 +2,4 @@ metadata:
   filename: "metadata.json"
 
 generator:
-  path: "../generated-apps"
+  path: ${TEMP}
