@@ -3,3 +3,5 @@ metadata:
 
 generator:
   path: ${TEMP}
+  ng:
+    path: ${NG_PATH:C:\\Program Files\\nodejs\\ng.cmd}
