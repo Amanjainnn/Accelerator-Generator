@@ -2,6 +2,6 @@ metadata:
   filename: "metadata.json"
 
 generator:
-  path: ${TEMP}
+  path: ${TEMP:\tmp}
   ng:
     path: ${NG_PATH:C:\\Program Files\\nodejs\\ng.cmd}
