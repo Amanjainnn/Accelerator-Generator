@@ -19,8 +19,10 @@ public class NodeModuleGenerator implements ModuleGenerator {
 	@Override
 	public void generate(Path path, TechStackRequest request)
 			throws BadRequestException, IOException, InterruptedException {
+
+		log.info("Creating Node Module generation for : {}",request);
 		String commandToGenerateServer = " generate" + " -g nodejs-express-server " + " -i "
-				+ Path.of(new ClassPathResource("default.yml").getURI()) + " -o "
+				+ new ClassPathResource("default.yml").getPath() + " -o "
 				+ path.resolve(request.getAppName() + "Backend");
 
 		Process process = Runtime.getRuntime().exec("java -jar "
