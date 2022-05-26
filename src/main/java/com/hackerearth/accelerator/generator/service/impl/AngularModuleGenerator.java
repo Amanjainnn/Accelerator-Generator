@@ -4,11 +4,12 @@ import com.hackerearth.accelerator.generator.dto.TechStackRequest;
 import com.hackerearth.accelerator.generator.exception.BadRequestException;
 import com.hackerearth.accelerator.generator.service.ModuleGenerator;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Map;
@@ -34,9 +35,9 @@ public class AngularModuleGenerator implements ModuleGenerator {
         printResults(process);
         process.waitFor();
 
-		if (process.exitValue() != 0) {
-			throw new RuntimeException("Error Generating frontend");
-		}
+        if (process.exitValue() != 0) {
+            throw new RuntimeException("Error Generating frontend");
+        }
     }
 
     public static void printResults(Process process) throws IOException {
