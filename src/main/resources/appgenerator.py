@@ -11,7 +11,7 @@ angular_path = os.environ["appDirectory"]
 angular_files=os.environ["angularFiles"]
 
 # Command to generate new angular app
-angular_app_cmd = "ng new "+str(angular_app_name)+" --defaults --skip-install"
+angular_app_cmd = "ng new "+str(angular_app_name)+" --defaults --skip-install --skip-git"
 
 # Openapi jar path
 openapi_jar_path=os.environ["openAPIJarPath"]
@@ -21,7 +21,7 @@ default_yaml_path=os.environ["defaultYamlPath"]
 
 #Ceate openAPI Angular APP at a path
 angular_openapi_path=os.path.join(angular_path, angular_app_name, "src", "app")
-openapi_angular_cmd="java -jar "+str(openapi_jar_path)+" generate -i "+str(default_yaml_path)+" -g typescript-angular -o "+str(angular_openapi_path)
+openapi_angular_cmd="java -jar "+str(openapi_jar_path)+" generate -i "+str(default_yaml_path)+" -g typescript-angular -o "+str(os.path.join(angular_openapi_path,"core"))
 
 
 def replace_files(root_src_dir,root_dst_dir):
