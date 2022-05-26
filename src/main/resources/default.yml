@@ -3,13 +3,12 @@ info:
   description: "This is a default server"
   version: "1.0.0"
   title: "Hello World"
-host: "localhost:8080"
+host: "localhost:8082"
 basePath: "/v1"
 tags:
   - name: "hello-world"
     description: "Basic hello world api"
 schemes:
-  - "https"
   - "http"
 paths:
   /hello:
@@ -22,8 +21,15 @@ paths:
       consumes:
         - "application/json"
       responses:
-        200:
+        "200":
           description: Returns the greeting.
           schema:
-            type: string
-            default: Hello World
+            $ref: "#/definitions/ModelSample"
+definitions:
+  ModelSample:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+    example:
+      message: "Hello World!!!"
