@@ -12,32 +12,38 @@ import java.util.Locale;
 @Service
 public class ModuleGeneratorFactory {
 
-	@Autowired
-	SpringBootModuleGenerator springBootModuleGenerator;
+    @Autowired
+    SpringBootModuleGenerator springBootModuleGenerator;
 
-	@Autowired
-	AngularModuleGenerator angularModuleGenerator;
+    @Autowired
+    AngularModuleGenerator angularModuleGenerator;
 
-	@Autowired
-	NodeModuleGenerator nodeModuleGenerator;
+    @Autowired
+    NodeModuleGenerator nodeModuleGenerator;
 
-	public void generate(Path path, TechStackRequest request, String module) throws IOException, InterruptedException {
+    @Autowired
+    FlaskModuleGenerator flaskModuleGenerator;
 
-		switch (module.toLowerCase(Locale.ROOT)) {
-		case "spring boot":
-			springBootModuleGenerator.generate(path, request);
-			break;
-		case "angular":
-			angularModuleGenerator.generate(path, request);
-			break;
-		case "node":
-			nodeModuleGenerator.generate(path, request);
-			break;
-		default:
-			throw new BadRequestException("Invalid Module type");
+    public void generate(Path path, TechStackRequest request, String module) throws IOException, InterruptedException {
 
-		}
+        switch (module.toLowerCase(Locale.ROOT)) {
+            case "spring boot":
+                springBootModuleGenerator.generate(path, request);
+                break;
+            case "angular":
+                angularModuleGenerator.generate(path, request);
+                break;
+            case "node":
+                nodeModuleGenerator.generate(path, request);
+                break;
+            case "flask":
+                flaskModuleGenerator.generate(path, request);
+                break;
+            default:
+                throw new BadRequestException("Invalid Module type");
 
-	}
+        }
+
+    }
 
 }
