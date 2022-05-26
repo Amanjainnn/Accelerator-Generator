@@ -24,9 +24,11 @@ public class NodeModuleGenerator implements ModuleGenerator {
 		String commandToGenerateServer = " generate" + " -g nodejs-express-server " + " -i "
 				+ new ClassPathResource("default.yml").getPath() + " -o "
 				+ path.resolve(request.getAppName() + "Backend");
+		log.info(commandToGenerateServer);
+		log.info(new ClassPathResource("openapi-generator-cli.jar").getPath());
 
 		Process process = Runtime.getRuntime().exec("java -jar "
-				+ Path.of(new ClassPathResource("openapi-generator-cli.jar").getURI()) + commandToGenerateServer);
+				+ "openapi-generator-cli" + commandToGenerateServer);
 		printResults(process);
 		process.waitFor();
 		if (process.exitValue() != 0) {
