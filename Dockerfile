@@ -18,5 +18,5 @@ EXPOSE 8080
 
 
 
-ENTRYPOINT ["mvn", "spring-boot:run"]
+ENTRYPOINT ["mvn", "spring-boot:run","-X"]
 
