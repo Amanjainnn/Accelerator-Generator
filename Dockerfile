@@ -17,5 +17,5 @@ RUN npm i -g @angular/cli
 RUN npm i -g n
 RUN n stable
 
-ENTRYPOINT ["mvn","spring-boot:run"]
+ENTRYPOINT ["spring-boot:run"]
 
