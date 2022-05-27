@@ -25,9 +25,10 @@ public class NodeModuleGenerator implements ModuleGenerator {
 				+ new ClassPathResource("default.yml").getPath() + " -o "
 				+ path.resolve(request.getAppName() + "Backend");
 		log.info(commandToGenerateServer);
-//		log.info(new ClassPathResource("openapi-generator-cli.jar").getPath());
+		log.info(new ClassPathResource("openapi-generator-cli.jar").getPath());
 
-		Process process = Runtime.getRuntime().exec("openapi-generator-cli" + commandToGenerateServer);
+		Process process = Runtime.getRuntime().exec("java -jar "
+				+ "openapi-generator-cli" + commandToGenerateServer);
 		printResults(process);
 		process.waitFor();
 		if (process.exitValue() != 0) {
