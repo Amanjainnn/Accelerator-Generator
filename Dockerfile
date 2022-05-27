@@ -1,5 +1,3 @@
-
-
 FROM openkbs/jdk-mvn-py3
 
 COPY . /usr/app
@@ -20,3 +18,4 @@ RUN npm i -g n
 RUN n stable
 
 ENTRYPOINT ["mvn","spring-boot:run"]
+

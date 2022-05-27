@@ -10,7 +10,7 @@ export class AppComponent   {
   title = 'app2';
 
   constructor(private helloWorldService: HelloWorldService){
-    helloWorldService.helloWorld().subscribe(message=>(alert(message)));
+    helloWorldService.helloWorld().subscribe(message=> alert(message), err => alert(err.error.message));
 
   }
 }
