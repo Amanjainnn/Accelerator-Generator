@@ -1,4 +1,5 @@
 FROM openkbs/jdk-mvn-py3
+USER root
 RUN npm i -g n
 RUN n stable
 RUN npm i -g @angular/cli
@@ -6,7 +7,6 @@ RUN npm i -g @angular/cli
 
 COPY . /usr/app
 
-USER root
 
 WORKDIR /usr/app
 
