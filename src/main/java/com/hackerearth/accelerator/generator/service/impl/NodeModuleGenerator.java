@@ -19,16 +19,12 @@ public class NodeModuleGenerator implements ModuleGenerator {
 	@Override
 	public void generate(Path path, TechStackRequest request)
 			throws BadRequestException, IOException, InterruptedException {
-
-		log.info("Creating Node Module generation for : {}",request);
 		String commandToGenerateServer = " generate" + " -g nodejs-express-server " + " -i "
-				+ new ClassPathResource("default.yml").getPath() + " -o "
+				+ Path.of(new ClassPathResource("default.yml").getURI()) + " -o "
 				+ path.resolve(request.getAppName() + "Backend");
-		log.info(commandToGenerateServer);
-		log.info(new ClassPathResource("openapi-generator-cli.jar").getPath());
 
 		Process process = Runtime.getRuntime().exec("java -jar "
-				+ "openapi-generator-cli" + commandToGenerateServer);
+				+ Path.of(new ClassPathResource("openapi-generator-cli.jar").getURI()) + commandToGenerateServer);
 		printResults(process);
 		process.waitFor();
 		if (process.exitValue() != 0) {
