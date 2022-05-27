@@ -13,8 +13,9 @@ RUN n stable
 RUN npm i -g @angular/cli
 
 
-ENV PORT 8080
+# ENV PORT 8080
 
-EXPOSE 8080
+# EXPOSE 8080
 
+ENTRYPOINT ["mvn","spring-boot:run"]
 
