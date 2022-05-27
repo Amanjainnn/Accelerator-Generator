@@ -5,10 +5,7 @@ import com.hackerearth.accelerator.generator.service.GeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.util.StreamUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -18,6 +15,7 @@ import java.util.zip.ZipOutputStream;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
 public class GeneratorServiceController {
 
 	@Autowired
