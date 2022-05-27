@@ -10,13 +10,13 @@ RUN mvn install
 
 ENV PORT 8080
 
-EXPOSE 8080
-
 RUN npm i -g n
 RUN n stable
+EXPOSE 8080
+
 
 RUN npm i -g @angular/cli
 
 
-ENTRYPOINT ["mvn spring-boot:run"]
+ENTRYPOINT ["mvn", "spring-boot:run"]
 
