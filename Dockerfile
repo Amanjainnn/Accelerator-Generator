@@ -1,7 +1,20 @@
 FROM openkbs/jdk-mvn-py3
-COPY . /usr/app/
+
+COPY . /usr/app
+
+USER root
+
 WORKDIR /usr/app
-RUN mvn clean install
+
+RUN mvn install
+
 ENV PORT 8080
-ENTRYPOINT ["mvn","spring-boot:run"]
+
 EXPOSE 8080
+
+RUN npm i -g @angular/cli
+
+RUN npm i -g n
+RUN n stable
+
+ENTRYPOINT ["mvn","spring-boot:run"]
